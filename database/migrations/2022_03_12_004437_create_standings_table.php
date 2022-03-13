@@ -24,7 +24,7 @@ return new class extends Migration {
             $table->timestamps();
         });
 
-        Schema::table('standing', function (Blueprint $table) {
+        Schema::table('standings', function (Blueprint $table) {
             $table->foreign('team_id')
                 ->references('id')
                 ->on('teams')

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('matches', function (Blueprint $table) {
+        Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('home_team_id');
             $table->unsignedBigInteger('away_team_id');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::table('matches', function(Blueprint $table) {
+        Schema::table('games', function(Blueprint $table) {
             $table->foreign('home_team_id')
                 ->references('id')
                 ->on('teams');
@@ -45,6 +45,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('matches');
+        Schema::dropIfExists('games');
     }
 };
